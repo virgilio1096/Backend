@@ -28,13 +28,13 @@ endpoint http://localhost:5000/consultar_normal metodo : GET
 
 ![image](https://user-images.githubusercontent.com/19189836/111846741-722e9880-88d5-11eb-8388-e105761adda0.png)
 
-el tercer enpint es el que realiza una consulta normal pero manipulando los datos de forma como lo solitaron
+el tercer endpoint es el que realiza una consulta normal pero manipulando los datos de forma como lo solitaron
 
 endpoint http://localhost:5000/consultar_compleja metodo : GET
 
 ![image](https://user-images.githubusercontent.com/19189836/111846849-a7d38180-88d5-11eb-9df5-aafa23e13787.png)
 
-El ultimo enpint es el que hace el scrape a amazon y aguarda los datos en nuestra tabla sqlite de igual forma si se ejecuta mas de una ves el proceso que agurda en la tabla hace un select a la tabla antes de aguardar y compara los registros nuevos de la vista y si ya existen en la tabla ya no lo aguarda esto es para que no tengamos productos duplicados.
+El ultimo endpoint es el que hace el scrape a amazon y aguarda los datos en nuestra tabla sqlite de igual forma si se ejecuta mas de una ves el proceso que agurda en la tabla hace un select a la tabla antes de aguardar y compara los registros nuevos de la vista y si ya existen en la tabla ya no lo aguarda esto es para que no tengamos productos duplicados.
 
 endpoint http://localhost:5000/post metodo : POST
 
@@ -43,6 +43,8 @@ endpoint http://localhost:5000/post metodo : POST
 si se ejcuta de nuevo por error o para ver si hay productos nuevos retorna lo siguiente
 
 ![image](https://user-images.githubusercontent.com/19189836/111847402-ba9a8600-88d6-11eb-8ee4-3ba79b9ec9d5.png)
+
+todos los endpoint se encuentran en el archivo app.js que esta en la rais del proyecto
 
 
 
