@@ -45,11 +45,9 @@ const buscar = async () => {
 async function datos(){
     var datosBD= await buscar();
     const nombres_existen=[];
-    const imagen_existen=[];
     const autor_existen=[];
     for (const DB of datosBD) {
             nombres_existen.push(DB.nombre);
-            imagen_existen.push(DB.url);
             autor_existen.push(DB.autor);
     }
     const browser = await puppeteer.launch()
@@ -83,13 +81,23 @@ async function datos(){
                 nombre_categoria.push({'nombre':categoria,'contador_id':constar});
             }else{
                 categoria=constar;
-                var imageUrl = await div.$eval(("img"), (element) => element.getAttribute("src"));
-                var nombre = await div.$eval(("a"), (element) => element.innerText);
+                var imageUrl ='';
+                var nombre = '';
                 var autor = '';
                 var estrellas='';
                 var cantidad_valoracion=''
                 var id='';
                 id = await div.$eval('div[class="a-section a-spacing-none p13n-asin"]', element => element.getAttribute("data-p13n-asin-metadata"));
+                try {
+                    nombre = await div.$eval(("a"), (element) => element.innerText);
+                } catch (error) {
+
+                }
+                try {
+                    imageUrl = await div.$eval(("img"), (element) => element.getAttribute("src"));
+                } catch (error) {
+
+                }
                 try {
                     autor = await div.$eval('span[class="a-size-small a-color-base"]', element => element.innerText)
                 } catch (error) {
@@ -105,7 +113,7 @@ async function datos(){
                 } catch (error) {
 
                 }
-                if(!(nombres_existen.indexOf(nombre) > -1 && imagen_existen.indexOf(imageUrl) > -1 && autor_existen.indexOf(autor) > -1)){
+                if(!(nombres_existen.indexOf(nombre) > -1 && autor_existen.indexOf(autor) > -1)){
                     array_prudctos.push(
                         {
                             'categoria':categoria,
@@ -236,7 +244,11 @@ app.get('/consultar_normal', (req, res) => {
 app.post('/insert', (req, res) => {
     datos()
         .then((articles) => {
-            res.json(articles);
+            if(articles.length>0){
+                res.json('se insertaron con exito a la tabla: '+articles.length+" registros");
+            }else{
+                res.json('No se encontraron registros nuevos');
+            }
         })
         .catch((err) => console.log(err));
 })
@@ -244,7 +256,7 @@ app.get('/consultar_compleja', async(req, res,next) => {
     var datos=await handleFetch();
     res.json(datos);
 })
-app.put('/delect', async(req, res,next) => {
+app.put('/eliminar', async(req, res,next) => {
     var mensaje=await eliminar();
     res.json(mensaje);
 })
