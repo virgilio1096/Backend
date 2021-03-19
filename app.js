@@ -105,7 +105,7 @@ async function datos(){
                 } catch (error) {
 
                 }
-                if(!(nombres_existen.indexOf(nombre) > -1 && imagen_existen.indexOf(imageUrl) > -1 && autor_existen.indexOf(autor) > -1)){
+                if(!(nombres_existen.indexOf(nombre) > -1  && autor_existen.indexOf(autor) > -1)){
                     array_prudctos.push(
                         {
                             'categoria':categoria,
