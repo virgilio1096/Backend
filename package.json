@@ -1,0 +1,33 @@
+{
+  "name": "proyecto-backend",
+  "version": "1.0.0",
+  "description": "proyecto tecnico",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/virgilio1096/Backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/virgilio1096/Backend/issues"
+  },
+  "homepage": "https://github.com/virgilio1096/Backend#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jssoup": "0.0.12",
+    "mysql": "^2.18.1",
+    "objects-to-csv": "^1.3.6",
+    "puppeteer": "^8.0.0",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
+    "sqlite3": "^5.0.2"
+  }
+}
