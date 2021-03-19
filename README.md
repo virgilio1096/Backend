@@ -4,7 +4,7 @@ Despues de aver descargado el proyecto favor de correr el siguiente comando para
 
 ### `npm install`
 
-cuando termine de descargar ejecutar el siguiente commando para correr el proyecto.
+Cuando termine de descargar ejecutar el siguiente commando para correr el proyecto.
 
 ### `nodemon app.js`
 
@@ -14,7 +14,7 @@ La base de datos que utiliza el proyecto se encuentra en la carpeta db y el arch
 
 En el proyecto se encuentra el archivo apps.js dicho archivo es donde podremos observar todo los endpoint solicitados
 
-el primer endpoint utiliza un petodo put /elimnar en esta ocacion utilice un put ya que en mi trabajo actual no acostubro a elimnar o usar metodos delete en las tablas siempre usamos modificar y estados de baja o activos, para consultar el api en el navegador o en algun programa en mi caso uso insomnia es de la siguiente manera.
+El primer endpoint utiliza un petodo put /elimnar en esta ocacion utilice un put ya que en mi trabajo actual no acostubro a elimnar o usar metodos delete en las tablas siempre usamos modificar y estados de baja o activos, para consultar el api en el navegador o en algun programa en mi caso uso insomnia es de la siguiente manera.
 
 El proyecto esta corriendo en el puerto 5000
 
@@ -22,13 +22,13 @@ endpoint http://localhost:5000/eliminar metodo : PUT
 
 ![image](https://user-images.githubusercontent.com/19189836/111846579-21b73b00-88d5-11eb-82a0-03ef0adef856.png)
 
-EL siguiente endpoint es el de consulta normal que nos regresa los datos de la tabla en un select normal
+El siguiente endpoint es el de consulta normal que nos regresa los datos de la tabla en un select normal
 
 endpoint http://localhost:5000/consultar_normal metodo : GET
 
 ![image](https://user-images.githubusercontent.com/19189836/111846741-722e9880-88d5-11eb-8388-e105761adda0.png)
 
-el tercer endpoint es el que realiza una consulta normal pero manipulando los datos de forma como lo solitaron
+El tercer endpoint es el que realiza una consulta normal pero manipulando los datos de forma como lo solitaron
 
 endpoint http://localhost:5000/consultar_compleja metodo : GET
 
@@ -40,7 +40,7 @@ endpoint http://localhost:5000/post metodo : POST
 
 ![image](https://user-images.githubusercontent.com/19189836/111847341-9ccd2100-88d6-11eb-9e89-78a77c1ef430.png)
 
-si se ejcuta de nuevo por error o para ver si hay productos nuevos retorna lo siguiente
+Si se ejcuta de nuevo por error o para ver si hay productos nuevos retorna lo siguiente
 
 ![image](https://user-images.githubusercontent.com/19189836/111847402-ba9a8600-88d6-11eb-8ee4-3ba79b9ec9d5.png)
 
