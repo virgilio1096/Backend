@@ -4,7 +4,7 @@
   "description": "proyecto tecnico",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "nodemon src/index.js",
     "dev": "nodemon src/app.js"
   },
   "repository": {
@@ -19,10 +19,13 @@
   "homepage": "https://github.com/virgilio1096/Backend#readme",
   "dependencies": {
     "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
     "cheerio": "^1.0.0-rc.5",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "express-handlebars": "^5.2.1",
     "jssoup": "0.0.12",
+    "morgan": "^1.10.0",
     "mysql": "^2.18.1",
     "objects-to-csv": "^1.3.6",
     "puppeteer": "^8.0.0",
