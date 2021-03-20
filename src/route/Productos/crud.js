@@ -1,9 +1,9 @@
 const express = require('express');
-const router= express.Router();
-
+const actualizar= require('../../views/Productos/actualizar');
 const agregar= require('../../views/Productos/agregar');
 const consultar_todo= require('../../views/Productos/consultar');
 const insertar= require('../../views/Productos/insertar');
+const router= express.Router();
 
 router.get('/agregar', (req, res) => {
     agregar.agregar();
@@ -19,6 +19,10 @@ router.get('/consultar/:id', async (req, res) => {
 router.post('/insertar', async (req, res) => {
     var datos=await insertar.insertar(req.body);
     console.log(datos)
+    res.send(datos)
+})
+router.put('/actualizar/:id', async (req, res) => {
+    var datos=await actualizar.actualizar(req.params.id,req.body);
     res.send(datos)
 })
 module.exports=router;
