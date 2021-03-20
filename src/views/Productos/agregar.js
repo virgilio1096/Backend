@@ -1,10 +1,6 @@
 const database= require('../../conexiones/conexiones');
 
 function agregar(datos) {
-    console.log(datos.nombre);
-    // if(datos.nombre){
-        
-    // }
     const insert="INSERT INTO Op_Productos(\
                 Nombre,\
                 Codigo,\
