@@ -31,6 +31,7 @@ db.run(Op_Productos,error=>{
 const Op_Pago="CREATE TABLE IF NOT EXISTS Op_Pago(\
     idOp_Pago INTEGER PRIMARY KEY AUTOINCREMENT,\
     idOp_Productos INTEGER NOT NULL,\
+    Cliente varchar(100) NOT NULL,\
     Cantidad INTEGER NOT NULL,\
     Precio DOUBLE(20) NOT NULL,\
     status TYNYIN(4) NOT NULL,\

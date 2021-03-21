@@ -1,5 +1,5 @@
 const database= require('../../conexiones/conexiones');
-const models= require('../../models/Productos');
+const models= require('../../models/Pago');
 const util= require('../../util/util');
 
 async function actualizar(id,columns){
@@ -13,13 +13,14 @@ async function actualizar(id,columns){
             if(conut>0){
                 separador=","
             }
+            console.log(columns)
             if(columns[dato]){
                 d+=separador+actializan+'="'+columns[dato]+'"'
                 conut++
             }
         }
         var usuarios='Fecha_Ultima_Modificacion="'+util.getDateTime()+'"';
-        var update="update Op_Productos set "+d+","+usuarios+" where idOp_Productos="+id;
+        var update="update Op_Pago set "+d+","+usuarios+" where idOp_Pago="+id;
         let resultados = await new Promise((resolve, reject) => {
             database.db.all(update,[],(error,rows)=>{
                 if(error){
@@ -30,7 +31,7 @@ async function actualizar(id,columns){
             });
         })   
     }
-    const update_select="select * from Op_Productos where idOp_Productos="+id;
+    const update_select="select * from Op_Pago where idOp_Pago="+id;
     let resultados_update = await new Promise((resolve, reject) => {
         database.db.all(update_select,[],(error,rows)=>{
             if(error){

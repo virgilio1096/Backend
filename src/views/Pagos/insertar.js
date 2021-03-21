@@ -4,14 +4,14 @@ const util= require('../../util/util');
 async function insertar(datos) {
     const mensaje=[];
     try {
-        if(datos.nombre== undefined || datos.nombre==''){
-            mensaje.push('agregar el nombre');
-        }
-        if(datos.codigo== undefined || datos.codigo==''){
-            mensaje.push('agregar el codigo');
+        if(datos.producto_id== undefined || datos.producto_id==''){
+            mensaje.push('agregar el producto_id');
         }
         if(datos.precio== undefined || datos.precio==''){
             mensaje.push('agregar el precio');
+        }
+        if(datos.cliente== undefined || datos.cliente==''){
+            mensaje.push('agregar el cliente');
         }
         if(datos.cantidad== undefined || datos.cantidad==''){
             mensaje.push('agregar el cantidad');
@@ -28,19 +28,19 @@ async function insertar(datos) {
         if(mensaje!=""){
             throw mensaje;
         }
-        const insert="INSERT INTO Op_Productos(\
-                    Nombre,\
-                    Codigo,\
-                    Precio,\
+        const insert="INSERT INTO Op_Pago(\
+                    idOp_Productos,\
+                    Cliente,\
                     Cantidad,\
+                    Precio,\
                     status,\
                     Fecha_Creacion,\
                     Usuario_Creacion,\
                     Fecha_Ultima_Modificacion,\
                     Usuario_Ultima_Modificacion)\
                     VALUES(\
-                    '"+datos.nombre+"',\
-                    '"+datos.codigo+"',\
+                    '"+datos.producto_id+"',\
+                    '"+datos.cliente+"',\
                     '"+datos.precio+"',\
                     '"+datos.cantidad+"',\
                     '"+datos.status+"',\
